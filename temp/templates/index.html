@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block css %}
+
+{% endblock %}
+
+{% block benefits %}
+        <li><a class="nav_a btn btn-primary" style="background:mediumseagreen;color:white;" href="#benefit">Benefits</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+{% endblock %}
+{% block main %}
+
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fades">
+        <img src="{% static 'imf/images/chicken.jpg' %}" style="width:100%; height:550px;">
+        <div class="text">Indus-Mega Farms</div>
+      </div>
+
+    <div class="mySlides fades">
+      <img src="{% static 'imf/images/rice.jpg' %}" style="width:100%; height:550px ">
+      <div class="text">Indus-Mega Farms</div>
+    </div>
+<!--
+     <div class="mySlides fades">
+      <img src="{% static 'images/vegetable.jpg' %}" style="width:100%; height:550px ">
+      <div class="text">Indus-Mega Farms</div>
+    </div>-->
+
+     <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+  </div>
+<div class='products_preview' id='products'>
+    <center>
+        <h2 class='products_header'>Products and Services</h2>
+    </center>
+<ul class='products_images'>
+    <div class="product">
+       <a href="#"><i class="fas fa-wallet truck"></i></a><br/>
+       <p class = 'product_text'> <span class='product_highlight'><b>INDUS WALLET</b></span><br/>Our easy solution for you to make cashless transactions anywhere you are in the world.</p>
+    </div>
+
+    <div class="product">
+        <a href="#"><i class='fas fa-truck truck'></i></a><br/>
+        <p class='product_text'> <span class='product_highlight'><b>RAW MATERIALS</b></span><br/>Aggregate raw materials to companies across Nigeria.</p>
+    </div>
+
+    <div class="product">
+            <a href="#"> <i class="fas fa-child truck"></i></a><br/>
+        <p class='product_text'> <span class='product_highlight'><b>ENGAGE</b></span><br/>Engage young people into Agro-related adventure</p>
+
+    </div>
+</ul>
+</div>
+
+<div class='benefits jumbotron' id='benefits' style="padding:50px 29px 64px 29px;">
+    <center><h1 class='benefits_header'>Benefits</h1></center>
+    <section id="benefit">
+            <div class="benefit__list">
+
+                <article class="benefit">
+                    <ul class="plan__features">
+                        <h4 class="plan__annotation">ACCESS</h4>
+                        <li class="plan__feature"><i class="fas fa-user-secret truck"></i></li>
+                        <h3>Gain clients effectively</h3>
+                        <li class="plan__feature">Meet with agro-related companies</li>
+                        <li class="plan__feature">Reliable intermediary</li>
+                        <li class="plan__feature">Periodic goods display</li>
+                    </ul>
+                </article>
+
+                <article class="benefit benefit--highlighted">
+                     <ul class="plan__features">
+                        <h4 class="plan__annotation">STOCKS</h4>
+                        <li class="plan__feature"><i class="fas fa-chart-line truck"></i></li>
+                        <h3>Increase your stocks</h3>
+                        <li class="plan__feature">Gain effective advertising</li>
+                        <li class="plan__feature">Increase media presence</li>
+                        <li class="plan__feature">Periodic advertisement promos</li>
+                    </ul>
+
+                </article>
+
+                <article class="benefit">
+                     <ul class="plan__features">
+                        <h4 class="plan__annotation">SECURE</h4>
+                        <li class="plan__feature"><i class="fas fa-money-check truck"></i></li>
+                        <h3>Blockchain backed</h3>
+                        <li class="plan__feature">Transparent</li>
+                        <li class="plan__feature">Fast means of transacting</li>
+                        <li class="plan__feature">Equal benefits for everyone</li>
+                    </ul>
+
+                </article>
+
+            </div>
+        </section>
+</div>
+
+
+
+
+{% endblock %}

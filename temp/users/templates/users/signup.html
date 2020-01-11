@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+{% block css %}
+<style>
+body{
+    background:#eee;
+
+}
+</style>
+
+{% endblock %}
+{% block main %}
+<div class="student_form container">
+    <center><h1 style="margin:0;"><img alt="Brand" src="{% static 'imf/images/favicon.ico' %}"><br/>Indus-Mega Farms</h1></center>
+    <h2 >Sign Up</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" class="btn btn-large btn-success" value="Sign Up">
+    </form>
+</div>
+<style>
+    .footer{
+        margin-top:3rem;
+
+    }
+</style>
+
+{% endblock %}

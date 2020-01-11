@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <link rel="stylesheet" href="{% static 'imf/css/imf/bootstrap.css' %}">
+     <link rel="stylesheet" href="{% static 'imf/css/imf/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'imf/css/imf/bootstrap-grid.css' %}">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indus-Mega Farms</title>
+    <style>
+  *{box-sizing:border-box}
+body{font-family: 'Quicksand', sans-serif;}
+html,body{height:100%; margin:0;}
+.main_nav{
+  position:fixed;
+  top:0;
+  left:0;
+  background:rgb(253, 253, 253);
+  opacity: 2.5;
+  width:100%;
+  height:60px;
+  margin-bottom:62px;
+  display:flex;
+  z-index:2;
+  justify-content:space-between;
+  align-items:center;
+  transition: top 0.3s;
+  }
+
+  .main_navlist{margin:0;
+                list-style: none;
+                display:flex;
+                padding-left:7px;
+}
+
+
+
+ .brand{
+   width:30px;
+   height:20px;
+   /* display:inline-block;
+   padding-left:2px;
+   margin-bottom: 8px;
+    */
+   display:flex;
+   justify-content: center;
+   align-items:center;
+ }
+
+ .brand_img{
+   width:100%;
+   padding-bottom: 15px;
+}
+
+ .other_links{
+   display:flex;
+   position:absolute;
+   right:1rem;
+}
+
+ .main_navitem{
+  padding-left:30px;
+  padding-bottom:15px;
+  height:40px;
+  width:120px;
+
+
+
+}
+
+.main_navitem ul{
+  margin:0;
+  margin-top:1.25rem;
+  padding:0;
+  list-style: none;
+  line-height: 40px;
+  text-align: center;
+  background:black;
+  opacity:0.8;
+  display:none;
+}
+
+
+.main_navitem:hover.main_navitem ul{
+  display:block;
+  color:white;
+}
+
+.main_navitem ul li:hover{
+  background:green;
+}
+
+  .brand_img{
+    width:100%;
+    left:1rem;
+    padding-top:1.4rem;
+}
+
+
+.main_navlink{
+  font-size:1rem;
+  text-decoration: none;
+  color:green;
+  font-weight:bold;
+}
+
+
+.main_navlink:hover{
+    color:darkred;
+
+}
+
+.last_link{
+    padding-right:1rem;}
+
+.betternav{display:flex;flex-direction:row;list-style:none;margin-top:10px;justify-content:center;align-items:center;}
+
+.backdrop{
+  display:none;
+  height:100vh;
+  width:100vw;
+  background:rgba(0,0,0,0.5);
+  z-index:3;
+  position:fixed;
+  top:0;
+  left:0;
+}
+
+.register-module{
+    display:none;
+    position:fixed;
+    z-index:101;
+    background:yellow;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+    width:600px;
+    height:200px;
+}
+
+.register-options{
+  list-style:none;
+  display:flex;
+  flex-direction: column;
+
+  margin:0;
+  background:green;
+}
+
+.register-option{
+  text-decoration:none;
+  color:white;
+  background:black;
+  padding:1rem 2rem;
+
+
+}
+
+.main{
+    margin-top:61px;
+    min-height:900px;
+    margin-bottom:68px;
+
+
+}
+
+.main:after{
+    content:"";
+    display:block;
+}
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1500px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.prev:hover,.next:hover{
+  color:white;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: goldenrod;
+  font-size: 25px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fades{
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+.products_preview{
+  margin:2rem 0;
+
+}
+
+
+
+.products_images{
+  list-style:none;
+  text-align:center;
+  display:flex;
+}
+
+.product{
+  width:15rem;
+  margin-left:2rem;
+  text-align:center;
+  vertical-align:right;
+  height:10rem;
+  margin:auto;
+  display:flex;
+
+}
+.product a{
+  text-decoration: none;
+
+}
+
+.product_highlight{
+  margin-top:1rem;
+  vertical-align:middle;
+}
+
+.wallet,.truck{
+  height:5rem;
+  vertical-align:right;
+}
+
+.truck{
+  font-size:4rem;
+  margin-top:0.7rem;
+  color:rgb(12, 53, 39);
+}
+
+.product_description{
+  text-align:center;
+}
+
+.benefits{
+  background:#e9ecef;
+  margin:0;
+  width:100%;
+
+
+
+}
+
+.benefits_header,.products_header,.events_header{
+  border-bottom:3px solid green;
+  display:inline-block;
+  width: fit-content;
+  color:#444;
+  margin-bottom:2rem;
+
+}
+
+.benefit {
+  background: #d5ffdc;
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  width: 35%;
+  vertical-align:middle;
+  border-radius:5px;
+}
+
+#benefit{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.benefit__list{
+    display:flex;
+
+}
+
+.benefit--highlighted {
+  background: #19b84c;
+  color: white;
+  margin-top:none;
+}
+
+.plan__annotation {
+  background: white;
+  color: #19b84c;
+  padding: 0.5rem;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+.plan__title {
+  color: #0e4f1f;
+}
+
+.plan__price {
+  color: #858585;
+}
+
+.plan--highlighted .plan__title {
+  color: white;
+}
+
+.plan--highlighted .plan__price {
+  color: #0e4f1f;
+}
+
+.plan__features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.plan__feature {
+  margin: 0.5rem 0;
+}
+
+
+.logo{padding-bottom:5px;}
+
+
+.male,.chart,.money{
+  font-size:4rem;
+}
+
+
+.main_footer{
+    width:100%;
+    color:#232a34;
+    height:70px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+   }
+.footer_items{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.footer_link{
+    text-decoration:none;
+    color:#cd5c5c;
+    padding:0 14px;
+}
+
+.footer_link:hover{
+    color:#ff4500;
+}
+
+.content{
+    min-height:100%;
+    height:auto !important;
+    height:100%;
+    margin:0 auto -78px;
+}
+
+.footer,.push{
+    height:78px;
+}
+
+.mynav{position:relative;}
+
+
+@media(max-width:500px){
+    .mySlides img{height:250px !important;}
+    .products_images{flex-direction:column;font-size:13px;justify-content:space-between;align-items:space-between;}
+    .betternav{positi}
+
+
+}
+
+</style>
+    {% block css %}
+    {% endblock %}
+
+</head>
+
+<body style="color:green;">
+<nav style="color:green; background:#e9ecef" class="mynav navbar navbar-default">
+    <a style="color:green; " class="navbar-brand" href="{% url 'home' %}">
+      <img class="logo" alt="Brand" src="{% static 'imf/images/favicon.ico' %}">&nbsp;&nbsp;&nbsp;&nbsp;Indus-Mega Farms
+    </a>
+
+    <ul class="betternav">
+        {% if user.is_authenticated %}
+
+        <li><a class="nav_a btn btn-default" style="color:green;" href="{% url 'users:logout' %}">Logout</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li><a class="nav_a btn btn-default" style="color:green;" href="{% url 'users:user_home' %}">Dashboard</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        {% else %}
+{% block benefits %}
+        {% endblock %}
+        <li><a class="nav_a" style="color:green;text-decoration:none;" href="{% url 'users:login' %}">Log in</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li><a id="nav_a" style="color:green;text-decoration:none;" href="{% url 'users:signup' %}">Sign Up</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+<div class="content">
+{% block main %}
+{% endblock %}
+    </div>
+<div class="push"></div>
+<footer class="footer main_footer" style="background:#232a34;color:white;">
+    <h2>Contact Us</h2>
+    <ul class="footer_items">
+        <div class="contact email">
+            <h3>Email</h3>
+            <p>indusmegafarm@gmail.com</p>
+        </div>
+         <div class="contact phone">
+            <h3>Phone</h3>
+            <p>07085223685<br/>09035136650</p>
+        </div>
+    </ul>
+</footer>
+</body>
+<script src="{% static 'imf/js/bootstrap.js' %}"></script>
+<script src="{% static 'imf/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'imf/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'imf/js/bootstrap.bundle.js' %}"></script>
+<script src="{% static 'imf/js/all.js' %}"></script>
+<script>
+
+    var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+var navbar = document.querySelector(".main_nav");
+var modal = document.querySelector(".register-module");
+var loglink = document.querySelector(".login");
+var backdrop = document.querySelector(".backdrop");
+var navlinks = document.querySelectorAll(".main_navlink");
+// adding eventlistener to display backdrop and modal
+loglink.addEventListener('click',function(){
+  modal.style.display = "block";
+  backdrop.style.display = "block";
+});
+
+// click backdrop to remove modal
+backdrop.addEventListener("click",function(){
+  if(modal){
+    modal.style.display = "none";
+    backdrop.style.display = "none";
+  }
+})
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function(){
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos){
+    navbar.style.top = "0";
+    navbar.style.background = "green";
+    for (i=0;i<navlinks.length;i++){
+      navlinks[i].style.color = "white";
+      navlinks[i].style.font = "none";
+
+    }
+  }else{
+    navbar.style.top = "-60px";
+
+  }
+  prevScrollpos = currentScrollPos;
+  if (prevScrollpos==0){
+      navbar.style.background = "white";
+      for (i=0;i<navlinks.length;i++){
+        navlinks[i].style.color = "green";
+
+      }
+  }
+}
+</script>
+
+</html>
